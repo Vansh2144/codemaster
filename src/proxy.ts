@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
 import type { NextRequest } from "next/server";
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const secret = process.env.NEXTAUTH_SECRET || "default_codemaster_secret_key_3004_vibe_coding";
   const token = await getToken({ req: request, secret });
   const { pathname } = request.nextUrl;
